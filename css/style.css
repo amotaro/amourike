@@ -100,8 +100,6 @@ iframe {
 .sub-cover {
   background-size: cover;
   background-position: center bottom;
-  height: 528px;
-  margin-bottom: 4rem;
 }
 
 /* HOME
@@ -306,7 +304,6 @@ iframe {
 
   /* ヘッダーカバー画像 */
   .sub-cover {
-    height: 400px;
     margin-bottom: 6rem;
   }
 
@@ -496,4 +493,37 @@ iframe {
 
 .price-container li {
   margin-bottom: 0.5rem;
+}
+/* PCでは非表示、スマホ（例: 768px以下）でのみ改行するクラスの例 */
+.sp-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sp-only {
+    display: inline; /* または block */
+  }
+
+  /* ページタイトルやサイトタイトルの調整例 */
+  .page-title,
+  title {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  /* Twitterやゲーム制作垢のリンク周りを二行にする・整える例 */
+  .sns-links,
+  .account-links {
+    display: flex;
+    flex-direction: column; /* 縦並び（二行）にする */
+    gap: 8px; /* リンク同士の隙間 */
+  }
+}
+.account-links {
+  text-align: center; /* テキストやインライン要素を中央寄せにする */
+  display: flex;
+  justify-content: center; /* フレックスボックスで中央に寄せる */
+  align-items: center;
+  gap: 16px; /* 項目同士の間隔をあける（お好みで調整） */
+  flex-wrap: wrap; /* 画面が狭くなって折り返す場合に対応 */
 }
